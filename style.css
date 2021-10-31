@@ -5,10 +5,32 @@
   border: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* --green: #09f755; */
+  --green: #0cc546;
+  --text: #fff;
+  --bg: #000;
+}
+
+#theme {
+  position: fixed;
+  right: 1.5rem;
+  top: 2.5rem;
+  transition: 0.5s;
+  background-color: transparent;
+  padding: 0.5rem;
+}
+
 body {
-  background: #000;
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
   font-family: "Montserrat", sans-serif;
+  transition: 0.5s;
 }
 
 .background {
@@ -88,7 +110,7 @@ nav .logo svg {
   font-size: 1.1rem;
   margin-bottom: 1.3rem;
   font-weight: 500;
-  color: #09f755;
+  color: var(--green);
   letter-spacing: 3px;
 }
 
@@ -100,7 +122,7 @@ nav .logo svg {
 .hero .hireMe {
   color: #000;
   text-decoration: none;
-  background: #09f755;
+  background: var(--green);
   padding: 1rem 3rem;
   font-weight: 600;
   font-size: 0.8rem;
@@ -121,6 +143,7 @@ nav .logo svg {
   display: flex;
   flex-direction: column;
   min-height: auto;
+  border-radius: 1rem;
 }
 
 .projects .grid .box .links {
@@ -184,7 +207,7 @@ nav .logo svg {
 .social .grid .box {
   border: 1px solid #797575;
   padding: 1rem;
-  border-bottom: 4px solid #09f755;
+  border-bottom: 4px solid var(--green);
 }
 .social .grid .box a {
   width: 100%;
@@ -239,6 +262,11 @@ footer a {
   }
 }
 @media only screen and (max-width: 600px) {
+  /* theme btn */
+  #theme {
+    position: absolute;
+  }
+
   .text-lg {
     font-size: 2.2rem;
   }
@@ -272,4 +300,19 @@ footer a {
   footer .text-sm {
     font-size: 0.8rem;
   }
+}
+
+/* Animation */
+.projects .box {
+  transition: 0.5s;
+}
+.projects .box:hover {
+  transform: scale(1.05);
+}
+
+.social .box a {
+  transition: 0.5s;
+}
+.social .box a:hover {
+  color: var(--text);
 }
