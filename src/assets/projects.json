@@ -1,0 +1,42 @@
+{
+  "projects": [
+    {
+      "name": "Event Radar",
+      "description": "Centralized platform to track and display upcoming technical events from various sources.",
+      "tags": ["ReactJS", "ExpressJS", "NodeJs", "MongoDB"],
+      "image": "/images/eventRadar.png",
+      "code": "https://github.com/SainathPoojary/event-radar-frontend",
+      "live": "https://event-radar-frontend.vercel.app/"
+    },
+    {
+      "name": "Online Notepad",
+      "description": "Developed a text/code saving app using React and Firebase for environments such as college labs. Demonstrated ability to create efficient and reliable React/Firebase solutions for storing and retrieving text/code",
+      "tags": ["ReactJS", "Firebase"],
+      "image": "/images/notepad.png",
+      "code": "https://github.com/SainathPoojary/online-notepad",
+      "live": "https://onlinenotepad.vercel.app/"
+    },
+    {
+      "name": "Medicine Recommendation System",
+      "description": "Developed a web app that recommends medicine based on user symptoms using Python and Sklearn.",
+      "tags": ["HTML", "CSS", "JS", "Flask", "Sklearn"],
+      "image": "/images/medicine.png",
+      "code": "https://github.com/sainathPoojary/medicinerecommendation",
+      "live": ""
+    },
+    {
+      "name": "Apna Cab",
+      "description": "Developed React Native apps, Apna Cab and Apna Cab Driver, with 100+ downloads.",
+      "tags": [
+        "React Native",
+        "Firebase",
+        "Google Maps API",
+        "Digital Ocean",
+        "ReactJS"
+      ],
+      "image": "/images/apnacab.png",
+      "code": "",
+      "live": "https://play.google.com/store/apps/developer?id=Apna+Cab"
+    }
+  ]
+}
