@@ -23,7 +23,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
       <motion.div
         whileHover={{ scale: 1.02 }}
         className={cn(
-          "flex justify-between items-center py-3.5 px-4 border-text border-1 rounded-md",
+          "flex justify-between items-center py-3.5 px-4 border-text dark:border-gray-400 border-1 rounded-md",
           {
             "justify-center": !text && !readme && !githubLink && !deployedLink,
           }
