@@ -22,6 +22,7 @@ const Doc = async ({ params }: DocProps) => {
       </main>
     );
   } catch (err) {
+    console.error(err);
     return (
       <main className="flex justify-center items-center h-screen dark:bg-dark-background overflow-x-hidden">
         <h1 className="text-3xl font-bold text-center text-gray-800">
