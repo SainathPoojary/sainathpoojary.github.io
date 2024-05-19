@@ -6,13 +6,8 @@ export interface Blog {
 
 export const blogs: Blog[] = [
   {
-    slug: "first-blog",
-    title: "First Blog",
-    markdown: "/blog",
-  },
-  {
-    slug: "second-blog",
-    title: "Second Blog",
-    markdown: "/blog",
+    slug: "blog-async",
+    title: "Async Javascript",
+    markdown: "/blog-async",
   },
 ];

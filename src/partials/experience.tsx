@@ -12,7 +12,6 @@ const Experiences = () => {
           <Card
             key={experience.slug}
             title={experience.title}
-            // readme={experience.readme}
             text={experience.years}
           />
         ))}
