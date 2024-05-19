@@ -9,8 +9,10 @@ interface DocProps {
 
 const Doc = async ({ params }: DocProps) => {
   try {
+    console.log(__filename);
+    console.log(__dirname);
     const markdown = await fs.readFile(
-      `${process.cwd()}/src/docs/${params.readme}.md`,
+      `../../../docs/${params.readme}.md`,
       "utf8"
     );
 
