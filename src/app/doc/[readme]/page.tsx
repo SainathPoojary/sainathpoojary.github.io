@@ -12,7 +12,7 @@ const Doc = async ({ params }: DocProps) => {
     console.log(__filename);
     console.log(__dirname);
     const markdown = await fs.readFile(
-      `../../../docs/${params.readme}.md`,
+      `../../../assets/docs/${params.readme}.md`,
       "utf8"
     );
 
