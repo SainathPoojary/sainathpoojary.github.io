@@ -11,6 +11,19 @@ const Doc = async ({ params }: DocProps) => {
   try {
     console.log(__filename);
     console.log(__dirname);
+    // console.log list all files in the directory
+    const files = await fs.readdir("../../../assets/docs");
+    console.log("../../assets/docs");
+    console.log(files);
+
+    const files2 = await fs.readdir("../../../assets");
+    console.log("../../assets");
+    console.log(files2);
+
+    const files3 = await fs.readdir("../../../");
+    console.log("../../");
+    console.log(files3);
+
     const markdown = await fs.readFile(
       `../../../assets/docs/${params.readme}.md`,
       "utf8"
