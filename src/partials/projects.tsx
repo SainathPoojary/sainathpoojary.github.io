@@ -1,5 +1,4 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
 import data from "@/assets/data";
 import { Card } from "@/components/card";
 import { useState } from "react";
@@ -7,7 +6,7 @@ import { useState } from "react";
 const Projects = () => {
   const [more, setMore] = useState<boolean>(false);
   return (
-    <motion.section className="flex flex-col gap-3">
+    <section className="flex flex-col gap-3">
       <h2 className="text-xl font-semibold">Projects</h2>
       <div className="flex flex-col gap-3">
         {data.projects
@@ -29,7 +28,7 @@ const Projects = () => {
           title={more ? "Less" : "More"}
         />
       </div>
-    </motion.section>
+    </section>
   );
 };
 

@@ -2,7 +2,6 @@ import Projects from "@/partials/projects";
 import Hero from "../partials/hero";
 import Blogs from "@/partials/blog";
 import Experiences from "@/partials/experience";
-import ThemeChanger from "@/components/themeChanger";
 
 export default function Home() {
   return (

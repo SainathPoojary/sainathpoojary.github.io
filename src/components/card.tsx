@@ -1,12 +1,9 @@
-"use client";
-
 import icons from "@/assets/icons";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import React, { forwardRef } from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
 
-export interface CardProps extends HTMLMotionProps<"div"> {
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   readme?: string;
   githubLink?: string;
@@ -20,10 +17,9 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     ref
   ) => {
     return (
-      <motion.div
-        whileHover={{ scale: 1.02 }}
+      <div
         className={cn(
-          "flex justify-between items-center py-3.5 px-4 border-text dark:border-gray-400 border-1 rounded-md",
+          "flex justify-between items-center py-3.5 px-4 border-text dark:border-gray-400 border-1 rounded-md hover:scale-102 transition-transform duration-200 ease-in-out",
           {
             "justify-center": !text && !readme && !githubLink && !deployedLink,
           }
@@ -34,23 +30,23 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         <h3 className="font-normal">{title}</h3>
         <div className="flex gap-3">
           {readme && (
-            <Link href={`/doc/${readme}`}>
+            <Link href={`${readme}`} aria-label="documentation link">
               <icons.docs />
             </Link>
           )}
           {githubLink && (
-            <Link href={githubLink}>
+            <Link href={githubLink} aria-label="github link">
               <icons.github />
             </Link>
           )}
           {deployedLink && (
-            <Link href={"/"} target="_blank">
+            <Link href={"/"} aria-label="live link" target="_blank">
               <icons.open />
             </Link>
           )}
           {text && <p>{text}</p>}
         </div>
-      </motion.div>
+      </div>
     );
   }
 );

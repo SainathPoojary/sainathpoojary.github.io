@@ -1,11 +1,9 @@
-"use client";
-import { forwardRef } from "react";
+import { ButtonHTMLAttributes, forwardRef } from "react";
 import { cva, VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import { HTMLMotionProps, motion } from "framer-motion";
 
 export const buttonVariant = cva(
-  "py-2.5 px-5 rounded-md text-sm font-semibold",
+  "py-2.5 px-5 rounded-md text-sm font-semibold active:scale-90 transition-all duration-200 ease-in-out",
   {
     variants: {
       variant: {
@@ -22,20 +20,19 @@ export const buttonVariant = cva(
 );
 
 export interface ButtonProps
-  extends HTMLMotionProps<"button">,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariant> {}
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant, className, ...props }, ref) => {
     return (
-      <motion.button
-        whileTap={{ scale: 0.95 }}
+      <button
         className={cn(buttonVariant({ variant, className }))}
         ref={ref}
         {...props}
       >
         {children}
-      </motion.button>
+      </button>
     );
   }
 );

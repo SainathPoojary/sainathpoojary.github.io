@@ -22,6 +22,9 @@ const config: Config = {
       fontSize: {
         "4.5xl": "2.75rem",
       },
+      scale: {
+        102: "1.02",
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

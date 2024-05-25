@@ -1,11 +1,9 @@
 "use client";
-
 import { Button } from "@/components/button";
-import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
-    <motion.section className="mt-24 flex flex-col justify-center items-center gap-4 ">
+    <section className="mt-24 flex flex-col justify-center items-center gap-4 ">
       <h1 className="text-4xl md:text-4.5xl lg:text-6xl font-semibold ">
         Hi! I&apos;m Sainath
       </h1>
@@ -31,7 +29,7 @@ const Hero = () => {
           Resume{" "}
         </Button>
       </div>
-    </motion.section>
+    </section>
   );
 };
 
