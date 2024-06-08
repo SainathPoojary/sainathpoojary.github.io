@@ -11,6 +11,7 @@ const Experiences = () => {
             key={experience.slug}
             title={experience.title}
             text={experience.years}
+            company={experience.company}
           />
         ))}
       </div>

@@ -4,13 +4,14 @@ import { Button } from "@/components/button";
 const Hero = () => {
   return (
     <section className="mt-24 flex flex-col justify-center items-center gap-4 ">
-      <h1 className="text-4xl md:text-4.5xl lg:text-6xl font-semibold ">
+      <h1 className="text-4xl md:text-4.5xl lg:text-6xl font-semibold">
         Hi! I&apos;m Sainath
       </h1>
-      <p className="text-lg md:text-xl text-center ">
-        I&apos;m web and mobile developer based in Mumbai, India. I enjoy
-        building stuffs that works.
-      </p>
+      <div className="text-lg md:text-xl text-center ">
+        <p>I&apos;m web and mobile app developer based in Mumbai, India.</p>
+        <p> I enjoy building stuffs that works.</p>
+      </div>
+
       <div className="flex gap-4">
         <Button
           onClick={() => {
@@ -25,8 +26,7 @@ const Hero = () => {
           }}
           variant={"outline"}
         >
-          {" "}
-          Resume{" "}
+          Resume
         </Button>
       </div>
     </section>

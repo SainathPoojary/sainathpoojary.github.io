@@ -6,7 +6,7 @@ import Experiences from "@/partials/experience";
 export default function Home() {
   return (
     <main className="dark:bg-dark-background dark:text-dark-text transition-all duration-500 ease-in-out">
-      <div className="w-4/5 lg:w-1/2 xl:w-2/5 mx-auto flex flex-col py-10 gap-16 ">
+      <div className="w-11/12 lg:w-1/2 xl:w-2/5 mx-auto flex flex-col py-10 gap-16 ">
         <Hero />
         <section className="flex flex-col gap-10">
           <Projects />

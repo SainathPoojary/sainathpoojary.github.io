@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeChanger from "@/components/themeChanger";
+import BackButton from "@/components/backButton";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,10 +17,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="" lang="en">
-      <body className={`${inter.className}`}>
-        {children}
+    <html lang="en">
+      <body className={`${inter.className} dark`}>
         <ThemeChanger />
+        {children}
       </body>
     </html>
   );

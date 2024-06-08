@@ -28,7 +28,7 @@ async function Page({ params }: Props) {
 
   return (
     <main className="dark:bg-dark-background">
-      <div className="prose max-w-none w-4/5 md:w-2/5 mx-auto py-10  prose-pre:rounded-lg  prose-figure:my-0 dark:text-white dark:prose-headings:text-white dark:prose-a:text-white dark:prose-code:text-white ">
+      <div className="prose max-w-none w-4/5 md:w-2/5 mx-auto dark:prose-p:text-dark-text dark:prose-strong:text-dark-text prose-pre:rounded-lg  prose-figure:my-0 dark:text-white dark:prose-headings:text-white dark:prose-a:text-white dark:prose-code:text-white py-20">
         <MDXRemote
           options={{
             mdxOptions: {

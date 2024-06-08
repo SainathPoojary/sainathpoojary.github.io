@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const DOCS_PATH = `${process.cwd()}/src/docs`;
+const DOCS_PATH = `${process.cwd()}/src/assets/data/markdown`;
 
 export function getDocs() {
   const files = fs.readdirSync(DOCS_PATH, "utf-8");

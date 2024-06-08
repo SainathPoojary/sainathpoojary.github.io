@@ -5,12 +5,18 @@
 :root {
   --text-color: #000000;
   --background-color: #ffffff;
-  --dark-text-color: #ddd;
-  --dark-background-color: rgb(30, 30, 30); 
+  --dark-text-color: #cdcdcd;
+  --dark-background-color: #232323; 
 }
 
-body {
+body,html {
   background-color: var(--background-color);
   color: var(--text-color);
   overflow-x: hidden;
+  height: 100%;
+}
+
+html,body.dark {
+  background-color: var(--dark-background-color);
+  color: var(--dark-text-color);
 }

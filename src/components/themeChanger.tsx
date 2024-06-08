@@ -10,11 +10,11 @@ enum Theme {
 }
 
 const ThemeChanger = () => {
-  const [theme, setTheme] = useState<Theme>(Theme.Light);
+  const [theme, setTheme] = useState<Theme>(Theme.Dark);
   const lottieRef = useRef<LottieRefCurrentProps>(null);
 
   useEffect(() => {
-    lottieRef.current?.goToAndStop(100, true);
+    lottieRef.current?.goToAndStop(10, true);
   }, []);
 
   const toggleTheme = () => {
@@ -38,8 +38,8 @@ const ThemeChanger = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.5 }}
         exit={{ opacity: 0 }}
+        className="relative "
       >
         <Lottie
           lottieRef={lottieRef}

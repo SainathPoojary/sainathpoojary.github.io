@@ -9,6 +9,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   githubLink?: string;
   deployedLink?: string;
   text?: string;
+  company?: string;
 }
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
@@ -19,7 +20,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
     return (
       <div
         className={cn(
-          "flex justify-between items-center py-3.5 px-4 border-text dark:border-gray-400 border-1 rounded-md hover:scale-102 transition-transform duration-200 ease-in-out",
+          "flex justify-between items-center py-3.5 px-4 border-text dark:border-gray-400 border-1 rounded-md hover:scale-102 transition-transform duration-200 ease-in-out gap-3",
           {
             "justify-center": !text && !readme && !githubLink && !deployedLink,
           }
@@ -27,8 +28,10 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         {...props}
         ref={ref}
       >
-        <h3 className="font-normal">{title}</h3>
-        <div className="flex gap-3">
+        <h3 className="font-normal truncate ">
+          {title} {props?.company && `@ ${props.company}`}
+        </h3>
+        <div className="flex gap-3 flex-shrink-0">
           {readme && (
             <Link href={`${readme}`} aria-label="documentation link">
               <icons.docs />
