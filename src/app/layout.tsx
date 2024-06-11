@@ -1,16 +1,41 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import ThemeChanger from "@/components/themeChanger";
-import BackButton from "@/components/backButton";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Sainath Poojary - Portfolio",
-  description: "Portfolio of Sainath Poojary",
+  description:
+    "I'm web and mobile app developer based in Mumbai, India. I enjoy building stuffs that works.",
+  openGraph: {
+    type: "website",
+    url: "https://sainath.vercel.app/og-image.png",
+    title: "Sainath Poojary - Portfolio",
+    description:
+      "I'm a web and mobile app developer based in Mumbai, India. I enjoy building things that work.",
+    images: [
+      {
+        url: "https://sainath.vercel.app/og-image.png",
+        width: 800,
+        height: 600,
+        alt: "Sainath Poojary - Portfolio Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sainath Poojary - Portfolio",
+    description:
+      "I'm a web and mobile app developer based in Mumbai, India. I enjoy building things that work.",
+    images: [
+      {
+        url: "https://sainath.vercel.app/og-image.png",
+        width: 800,
+        height: 600,
+        alt: "Sainath Poojary - Portfolio Image",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

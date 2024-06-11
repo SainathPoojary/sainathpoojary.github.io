@@ -26,13 +26,6 @@ const data: {
 } = {
   projects: [
     {
-      title: "LineUp",
-      live: "https://lineup-hackoverflow.vercel.app/",
-      github: "https://github.com/sainathPoojary/lineup",
-      markdown: "lineup",
-    },
-
-    {
       title: "Blockchain Certificate Generator",
       github:
         "https://github.com/SainathPoojary/blockchain-certificate-generator",
@@ -51,6 +44,12 @@ const data: {
       figma: "https://www.figma.com/design/1MxufFoaDU1MNbuAUIuyYT/Image-Drive",
       live: "https://node-image-drive.vercel.app/",
       markdown: "node-image-drive",
+    },
+    {
+      title: "LineUp",
+      live: "https://lineup-hackoverflow.vercel.app/",
+      github: "https://github.com/sainathPoojary/lineup",
+      markdown: "lineup",
     },
   ],
   experiences: [
