@@ -68,6 +68,22 @@ const data: {
       title: "Async Javascript",
       markdown: "blog-async",
     },
+    {
+      title: "PHP Coding Standards",
+      markdown: "blog-php-coding-standards",
+    },
+    {
+      title: "Javascript Coding Standards",
+      markdown: "blog-js-coding-standards",
+    },
+    {
+      title: "HTML Coding Standards",
+      markdown: "blog-html-coding-standards",
+    },
+    {
+      title: "CSS Coding Standards",
+      markdown: "blog-css-coding-standards",
+    }
   ],
 };
 

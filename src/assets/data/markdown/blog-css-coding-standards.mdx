@@ -1,0 +1,129 @@
+## CSS Coding Standards
+
+### Structure
+Each selector should be on its own line, ending in either a comma or an opening curly brace.
+
+```css
+/* Bad */
+.selector, .selector2, .selector3 {
+	color: #fff;
+	background: #000;
+	}
+
+/* Good */
+.selector,
+.selector2,
+.selector3 {
+	color: #fff;
+	background: #000;
+}
+```
+
+### Selectors
+Use lowercase and separate words with hyphens when naming selectors. Avoid camelcase and underscores.
+
+```css
+/* Bad */
+.mySelector,
+.my_selector {
+	color: #fff;
+}
+
+/* Good */
+.my-selector {
+	color: #fff;
+}
+```
+
+### Property Ordering
+Group like properties together, especially if you have a lot of them.
+
+The baseline for ordering is:
+- Display
+- Positioning
+- Box model
+- Colors and Typography
+- Other
+
+#### Order Alphabetically
+If you have a lot of properties in a group, order them alphabetically.
+
+```css
+/* Bad */
+.selector {
+	color: #fff;
+	background: #000;
+	font-size: 16px;
+	display: block;
+}
+
+/* Good */
+.selector {
+	background: #000;
+	color: #fff;
+	display: block;
+	font-size: 16px;
+}
+```
+
+### Values
+- Use lowercase for hex colors.
+- Use shorthand properties when possible.
+- Use double quotes rather than single quotes except in font names.
+- Font weights should be defined using numeric values (e.g. 400 instead of normal, 700 rather than bold).
+
+```css
+
+/* Bad */
+.class { /* Avoid missing space and semicolon */
+    background:#fff
+}
+
+.class { /* Avoid adding a unit on a zero value */
+    margin: 0px 0px 20px 0px;
+}
+
+.class {
+    font-family: Times New Roman, serif; /* Quote font names when required */
+    font-weight: bold; /* Avoid named font weights */
+    line-height: 1.4em; /* Avoid adding a unit for line height */
+}
+
+.class { /* Incorrect usage of multi-part values */
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5),
+                 0 1px 0 #fff;
+    box-shadow: 0 1px 0 rgba(0, 0,
+        0, 0.5),
+        0 1px 0 rgba(0,0,0,0.5);
+}
+
+```
+
+### Comments
+
+Like PHPDoc, CSS comments should be used to describe the purpose of a block of CSS.
+
+#### For Sections and Subsections
+```css
+/**
+ * #.# Section title
+ *
+ * Description of section, whether or not it has media queries, etc.
+ */
+
+.selector {
+    float: left;
+}
+```
+
+For inline:
+
+```css
+/* This is a comment about this selector */
+.another-selector {
+    position: absolute;
+    top: 0 !important; /* I should explain why this is so !important */
+}
+
+
+

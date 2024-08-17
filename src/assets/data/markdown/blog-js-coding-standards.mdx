@@ -1,0 +1,239 @@
+
+### 1. **Indentation**
+   - **Use Tabs**: Indentation must be done with tabs, not spaces, to ensure consistency across environments.
+   ```javascript
+   function sayHello() {
+   	if ( true ) {
+   		console.log( 'Hello, World!' );
+   	}
+   }
+   ```
+
+### 2. **Quotes**
+   - **Single Quotes**: Use single quotes for strings, and only use double quotes for HTML attributes.
+   ```javascript
+   const greeting = 'Hello, World!';
+   const html = '<div class="container"></div>';
+   ```
+
+### 3. **Naming Conventions**
+   - **CamelCase**: Use `camelCase` for variables and functions, and `PascalCase` for constructors.
+   ```javascript
+   let userName = 'JohnDoe';
+   function getUserName() {
+   	return userName;
+   }
+   
+   class UserProfile {
+   	constructor( name ) {
+   		this.name = name;
+   	}
+   }
+   ```
+
+### 4. **Line Length**
+   - **80 Characters**: Aim to keep each line of code within 80 characters. Break lines that are too long.
+   ```javascript
+   const message = 'This is a long message that should be split across lines ' +
+   	'to maintain readability and adhere to the 80-character limit.';
+   ```
+
+### 5. **Comments**
+   - **Use Clear Comments**: Write comments to explain why the code exists, not what it does.
+   ```javascript
+   // Redirect users to the homepage if they are not logged in
+   function checkUserLoginStatus() {
+   	if ( ! isLoggedIn() ) {
+   		redirectToHomepage();
+   	}
+   }
+   ```
+
+### 6. **Equality Checks**
+   - **Strict Equality**: Always use `===` and `!==` to avoid unexpected type coercion.
+   ```javascript
+   if ( user.id === 10 ) {
+   	console.log( 'User ID is 10' );
+   }
+   ```
+
+### 7. **JSDoc Comments**
+   - **Document Your Code**: Use JSDoc to describe the purpose of functions and their parameters.
+   ```javascript
+   /**
+    * Calculates the area of a rectangle.
+    *
+    * @param {number} width - The width of the rectangle.
+    * @param {number} height - The height of the rectangle.
+    * @returns {number} The area of the rectangle.
+    */
+   function calculateArea( width, height ) {
+   	return width * height;
+   }
+   ```
+
+### 8. **Spacing**
+   - **Consistent Spacing**: Maintain spacing around operators and after commas for clarity.
+   ```javascript
+   const sum = a + b;
+   const coordinates = [ 10, 20 ];
+   ```
+
+### 9. **Array and Object Literals**
+   - **Readable Structure**: Break complex array and object literals across multiple lines.
+   ```javascript
+   const settings = {
+   	theme: 'dark',
+   	layout: 'grid',
+   	showSidebar: true,
+   };
+   
+   const fruits = [
+   	'apple',
+   	'banana',
+   	'orange',
+   ];
+   ```
+
+### 10. **Avoid Global Variables**
+   - **Encapsulation**: Encapsulate your code in IIFEs (Immediately Invoked Function Expressions) or modules to avoid polluting the global namespace.
+   ```javascript
+   (function() {
+   	const localVariable = 'I am private';
+   	function privateFunction() {
+   		return localVariable;
+   	}
+   })();
+   ```
+
+### 11. **Use `let` and `const`**
+   - **Block Scoping**: Use `let` for variables that may change and `const` for constants to leverage block scoping and avoid issues with variable hoisting.
+   ```javascript
+   const maxItems = 10;
+   let currentItem = 0;
+
+   while ( currentItem < maxItems ) {
+   	currentItem++;
+   }
+   ```
+
+Let's dive even deeper into WordPress JavaScript coding standards:
+
+### 12. **Function Declarations vs. Expressions**
+   - **Function Declarations**: Use function declarations for named functions, which helps in hoisting and improves readability.
+   ```javascript
+   function greetUser( name ) {
+   	return `Hello, ${name}!`;
+   }
+   ```
+   - **Function Expressions**: Use function expressions for anonymous functions, especially for callbacks.
+   ```javascript
+   const greet = function( name ) {
+   	return `Hello, ${name}!`;
+   };
+   ```
+
+### 13. **IIFE (Immediately Invoked Function Expressions)**
+   - **Scope Isolation**: Use IIFE to create a private scope, preventing conflicts with other scripts.
+   ```javascript
+   (function() {
+   	const privateVar = 'This is private';
+   	console.log( privateVar );
+   })();
+   ```
+
+### 14. **Object-Oriented Programming (OOP)**
+   - **Classes and Prototypes**: Embrace ES6 classes for object-oriented patterns.
+   ```javascript
+   class Person {
+   	constructor( name, age ) {
+   		this.name = name;
+   		this.age = age;
+   	}
+
+   	sayHello() {
+   		return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+   	}
+   }
+
+   const john = new Person( 'John Doe', 30 );
+   console.log( john.sayHello() );
+   ```
+
+### 15. **Error Handling**
+   - **Try-Catch**: Use `try-catch` blocks for error-prone operations like JSON parsing or external API calls.
+   ```javascript
+   try {
+   	const data = JSON.parse( jsonString );
+   	console.log( data );
+   } catch ( error ) {
+   	console.error( 'Parsing error:', error );
+   }
+   ```
+
+### 16. **Modularization**
+   - **Modular Code**: Organize code into modules or files to promote reusability and maintainability.
+   ```javascript
+   // mathUtils.js
+   export function add( a, b ) {
+   	return a + b;
+   }
+
+   export function subtract( a, b ) {
+   	return a - b;
+   }
+
+   // main.js
+   import { add, subtract } from './mathUtils';
+
+   console.log( add( 5, 3 ) );  // 8
+   console.log( subtract( 5, 3 ) );  // 2
+   ```
+
+### 17. **Event Handling**
+   - **Use Delegation**: Event delegation can improve performance, especially with dynamic content.
+   ```javascript
+   document.querySelector( '#parent' ).addEventListener( 'click', function( event ) {
+   	if ( event.target.matches( '.child' ) ) {
+   		console.log( 'Child element clicked!' );
+   	}
+   });
+   ```
+
+### 18. **DOM Manipulation**
+   - **Minimize Direct Manipulation**: Use functions like `document.createElement` and `appendChild` instead of innerHTML to avoid XSS vulnerabilities.
+   ```javascript
+   const div = document.createElement( 'div' );
+   div.className = 'container';
+   div.textContent = 'Hello, World!';
+   document.body.appendChild( div );
+   ```
+
+### 19. **Performance Considerations**
+   - **Debounce or Throttle**: Use debounce or throttle techniques for event handlers like scroll or resize to improve performance.
+   ```javascript
+   function debounce( func, wait ) {
+   	let timeout;
+   	return function( ...args ) {
+   		clearTimeout( timeout );
+   		timeout = setTimeout( () => func.apply( this, args ), wait );
+   	};
+   }
+
+   window.addEventListener( 'resize', debounce( () => {
+   	console.log( 'Resized!' );
+   }, 200 ) );
+   ```
+
+### 20. **Security Practices**
+   - **Sanitize Inputs**: Always sanitize user inputs to prevent XSS and other security vulnerabilities.
+   ```javascript
+   function sanitizeInput( input ) {
+   	return input.replace( /<script.*?>.*?<\/script>/gi, '' );
+   }
+   
+   const userInput = '<script>alert("XSS")</script>';
+   const safeInput = sanitizeInput( userInput );
+   console.log( safeInput );  // ""
+   ```
+

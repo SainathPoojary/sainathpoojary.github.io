@@ -1,0 +1,73 @@
+## HTML Coding Standards
+
+### Self-closing Elements
+For tags that are self-closing, the forward slash should have exactly one space preceding it
+
+```html
+<!-- Bad -->
+<img src="path/to/image.png"/>
+
+<!-- Good -->
+<img src="path/to/image.png" />
+```
+
+### Attributes and Tags
+All tags and attributes must be written in lowercase. Additionally, attribute values should be lowercase
+
+```html
+<!-- Bad -->
+<A HREF="/">Home</A>
+
+<!-- Good -->
+<a href="/">Home</a>
+```
+
+### Quotes
+Use double/single quotes for attribute values
+
+```html
+<!-- Bad -->
+<a href='/'>Home</a>
+
+<!-- Good -->
+<a href="/">Home</a>
+```
+
+### Boolean Attributes
+Boolean attributes should not have a value
+
+```html
+<!-- Bad -->
+<input type="text" disabled="true" />
+
+<!-- Good -->
+<input type="text" disabled />
+```
+
+### Indentation
+When mixing PHP and HTML together, indent PHP blocks to match the surrounding HTML code
+
+```html
+<!-- Bad -->
+<?php if ( ! have_posts() ) : ?>
+<div id="post-0" class="post error404 not-found">
+<h1 class="entry-title">Not Found</h1>
+<div class="entry-content">
+<p>Apologies, but no results were found.</p>
+<?php get_search_form(); ?>
+</div>
+</div>
+<?php endif; ?>
+
+<!-- Good -->
+<?php if ( ! have_posts() ) : ?>
+<div id="post-1" class="post">
+    <h1 class="entry-title">Not Found</h1>
+    <div class="entry-content">
+        <p>Apologies, but no results were found.</p>
+        <?php get_search_form(); ?>
+    </div>
+</div>
+<?php endif; ?>
+```
+

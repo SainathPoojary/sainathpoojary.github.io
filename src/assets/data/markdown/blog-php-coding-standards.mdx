@@ -1,0 +1,189 @@
+# PHP Coding Standards
+
+Table of Content
+- [PHP Coding Standards](#php-coding-standards)
+  - [1. General](#1-general)
+    - [1.1 Opening and Closing PHP Tags](#11-opening-and-closing-php-tags)
+    - [1.2 No Shorthand PHP Tags](#12-no-shorthand-php-tags)
+    - [1.3 Single and Double Quotes](#13-single-and-double-quotes)
+    - [1.4 Writing include/require statements](#14-writing-includerequire-statements)
+  - [2. Naming Conventions](#2-naming-conventions)
+    - [2.1 Lowercase letter and Underscore seperated](#21-lowercase-letter-and-underscore-seperated)
+    - [2.2 Capitalized words separated by underscores.](#22-capitalized-words-separated-by-underscores)
+    - [2.3 Uppercase](#23-uppercase)
+    - [2.4 File names](#24-file-names)
+  - [3. Whitespace](#3-whitespace)
+  - [4. Formatting](#4-formatting)
+    - [4.1 Braces](#41-braces)
+    - [4.2 Declaring Arrays](#42-declaring-arrays)
+    - [4.3 Multiline Function Calls](#43-multiline-function-calls)
+
+
+## 1. General
+### 1.1 Opening and Closing PHP Tags
+When embedding multi-line PHP snippets within an HTML block, the PHP open and close tags must be on a line by themselves.
+```php
+// Multi line
+function foo() {
+    ?>
+    <div>
+        <?php
+        echo esc_html(
+            bar(
+                $baz,
+                $bat
+            )
+        );
+        ?>
+    </div>
+    <?php
+}
+// Single Line 
+<input name="<?php echo esc_attr( $name ); ?>" />
+```
+
+### 1.2 No Shorthand PHP Tags
+Incorrect
+```php
+<? ... ?>
+<?= esc_html( $var ) ?>
+```
+Correct
+```php
+<?php ... ?>
+<?php echo esc_html( $var ); ?>
+```
+
+### 1.3 Single and Double Quotes
+Always use single quote, only use double quote when required
+```php
+echo '<a href="/static/link" class="button button-primary">Link name</a>';
+echo "<a href='{$escaped_link}'>text with a ' single quote</a>";
+```
+
+### 1.4 Writing include/require statements
+It is recommended to use require over include. As it throws error and bugs can be fixed earlier
+```php
+// Correct.
+require_once ABSPATH . 'file-name.php';
+
+// Incorrect.
+include_once  ( ABSPATH . 'file-name.php' );
+require_once     __DIR__ . '/file-name.php';
+```
+
+## 2. Naming Conventions
+
+### 2.1 Lowercase letter and Underscore seperated
+- Variable
+- Actions/Filters
+- Functions
+
+```php
+// Variables
+$first_name = 'John';
+
+// Actions/Filters
+add_action('wp_head', 'custom_wp_head_action');
+function custom_wp_head_action() {
+    echo '<!-- Custom action in wp_head -->';
+}
+
+// Functions
+function get_full_name($first_name, $last_name) {
+    return $first_name . ' ' . $last_name;
+}
+```
+```
+💔 Note: With the introduction of named arguments in PHP 8.0, where you can call a function by explicitly naming its parameters, renaming a function parameter is considered Breaking change.
+```
+
+### 2.2 Capitalized words separated by underscores. 
+- Class
+- Traits
+- Interfaces
+- Enum
+```php
+// Class
+class User_Profile {
+    // Class properties and methods
+}
+
+// Trait
+trait Singleton_Trait {
+    // Trait methods
+}
+
+// Interface
+interface Loggable_Interface {
+    public function log_message($message);
+}
+
+// Enum
+enum User_Role {
+    case Administrator;
+    case Editor;
+    case Subscriber;
+}
+```
+
+### 2.3 Uppercase
+- Constants
+
+    ```php
+    define( 'DOING_AJAX', true );
+    ```
+
+### 2.4 File names
+- Class name should be prepended by `class-`
+
+  <img src="image-8.png" width="300px"/>
+
+- Files containing template tags in the wp-includes directory should have `-template`
+  
+    <img src="image-9.png" width="300px"/>
+
+## 3. Whitespace
+- Always put spaces after commas, and on both sides of logical, arithmetic, comparison, string and assignment operators.
+- Spaces on both sides of the opening and closing parentheses
+- Remove trailing whitespace at the end of each line. 
+- For associative arrays, each item should start on a new line when the array contains more than one item.
+
+## 4. Formatting
+### 4.1 Braces
+Use Braces even if their is only one statement in this style
+```php
+if ( condition ) {
+    action1();
+    action2();
+} elseif ( condition2 && condition3 ) {
+    action3();
+    action4();
+} else {
+    defaultaction();
+}
+```
+
+### 4.2 Declaring Arrays
+- Use `array(1,2,3)` instead of `[1,2,3]`
+
+### 4.3 Multiline Function Calls
+- Functions having parameters which takes more than 1 line is considered Multiline.
+- Multiline parameter should be broken in variables and these variable should be passed to functions
+
+```php
+$multiLineArray = array(
+    'key1' => 'value1',
+    'key2' => 'value2',
+    'key3' => 'value3'
+);
+
+$multiLineString = "This is a long string that 
+spans multiple lines.";
+
+$functionReturn = someFunction(
+    $multiLineArray,
+    $multiLineString,
+    'singleLineValue'
+);
+```
