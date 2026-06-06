@@ -3,6 +3,7 @@ import Hero from "../partials/hero";
 import Blogs from "@/partials/blog";
 import Experiences from "@/partials/experience";
 import Socials from "@/partials/socials";
+import Tools from "@/partials/tools";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <section className="flex flex-col gap-10">
           <Projects />
+          <Tools />
           <Experiences />
           <Blogs />
           <Socials />

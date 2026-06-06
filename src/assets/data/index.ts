@@ -19,10 +19,16 @@ export interface Blog {
   markdown: string;
 }
 
+export interface Tool {
+  title: string;
+  live: string;
+}
+
 const data: {
   projects: Project[];
   experiences: Experience[];
   blogs: Blog[];
+  tools: Tool[];
 } = {
   projects: [
     {
@@ -84,6 +90,12 @@ const data: {
       title: "CSS Coding Standards",
       markdown: "blog-css-coding-standards",
     }
+  ],
+  tools: [
+    {
+      title: "Image Tracer",
+      live: "https://image-tracer-tool.vercel.app/",
+    },
   ],
 };
 
